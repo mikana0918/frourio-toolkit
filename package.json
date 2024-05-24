@@ -1,0 +1,25 @@
+{
+  "name": "frourio-toolkit",
+  "version": "1.0.0",
+  "description": "frourio essential toolkit",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mikana0918/frouvel.git"
+  },
+  "keywords": [
+    "frourio"
+  ],
+  "author": "mikana0918",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mikana0918/frouvel/issues"
+  },
+  "homepage": "https://github.com/mikana0918/frouvel#readme",
+  "dependencies": {
+    "@prisma/client": "^5.14.0"
+  }
+}
