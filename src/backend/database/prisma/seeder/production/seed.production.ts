@@ -1,6 +1,6 @@
 import { PrismaClient } from "@prisma/client"
 
-export const defineDevSeeder = (args: {
+export const defineProductionSeeder = (args: {
     prisma: PrismaClient 
 }) => {
     

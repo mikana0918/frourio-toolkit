@@ -4,6 +4,7 @@
   "description": "frourio essential toolkit",
   "main": "index.js",
   "scripts": {
+    "tsx": "tsx",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,6 +21,12 @@
   },
   "homepage": "https://github.com/mikana0918/frouvel#readme",
   "dependencies": {
-    "@prisma/client": "^5.14.0"
+    "@prisma/client": "^5.14.0",
+    "consola": "^3.2.3"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.12",
+    "tsx": "^4.11.0",
+    "typescript": "^5.4.5"
   }
 }
