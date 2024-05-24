@@ -1,8 +1,8 @@
 {
-  "name": "frourio-toolkit",
+  "name": "@mikana0918/frourio-toolkit",
   "version": "0.0.1",
-  "description": "frourio essential toolkit",
-  "main": "index.js",
+  "description": "🚀supercharges your frourio app",
+  "main": "index.ts",
   "scripts": {
     "tsx": "tsx",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -15,7 +15,7 @@
     "frourio"
   ],
   "author": "mikana0918",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/mikana0918/frouvel/issues"
   },
