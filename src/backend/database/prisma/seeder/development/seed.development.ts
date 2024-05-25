@@ -1,16 +1,15 @@
-import type { Prisma, PrismaClient } from "@prisma/client";
-import { defineSeed } from "../defineSeed";
+import type { Prisma, PrismaPromise } from "@prisma/client";
+import type { PrismaClient } from "@prisma/client";
+import { froulog } from "../../../../../utils/froulog";
 
-export const defineDevelopmentSeeder = (args: {
+export const defineDevelopmentSeeder = async (args: {
   prisma: PrismaClient;
-  seeders: ReturnType<typeof defineSeed>[];
+  seeders: Array<(tx: PrismaClient) => PrismaPromise<void>>;
 }) => {
   return args.prisma
-    .$transaction((tx: Prisma.TransactionClient) =>
-      args.seeders.map((seeder) => seeder(tx))
-    )
+    .$transaction(args.seeders.map((seeder) => seeder(args.prisma)))
     .catch((error: any) => {
-      console.error(error);
+      froulog.error(error);
       process.exit(1);
     })
     .finally(async () => {

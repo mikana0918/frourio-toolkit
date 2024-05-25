@@ -4,6 +4,8 @@
   "description": "🚀supercharges your frourio app",
   "main": "index.ts",
   "scripts": {
+    "dev": "ts-node-dev --respawn --transpile-only --no-notify --no-deps --prefer-ts-exts index.ts",
+    "build": "tsc",
     "tsx": "tsx",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -26,6 +28,7 @@
   },
   "devDependencies": {
     "@types/node": "^20.12.12",
+    "npm-run-all2": "^6.2.0",
     "tsx": "^4.11.0",
     "typescript": "^5.4.5"
   }

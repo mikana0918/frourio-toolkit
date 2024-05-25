@@ -1,17 +1,17 @@
-import { Prisma } from "@prisma/client";
+import { Prisma, PrismaClient, PrismaPromise } from "@prisma/client";
+import { froulog } from "../../../../utils/froulog";
 
 export const defineSeed = (args: {
-  handler: (tx: Prisma.TransactionClient) => Promise<void>;
+  name: string;
+  handler: (tx: PrismaClient) => Promise<any>;
 }) => {
-  return async (tx: Prisma.TransactionClient) => {
-    return args
-      .handler(tx)
-      .catch((error) => {
-        console.error(error);
-        process.exit(1);
-      })
-      .finally(async () => {
-        await tx.$disconnect();
-      });
+  return async (tx: PrismaClient) => {
+    try {
+      args.handler(tx);
+      froulog.success([`successfully seeded: ${args.name}`]);
+    } catch (error) {
+      froulog.error(error);
+      throw error;
+    }
   };
 };
